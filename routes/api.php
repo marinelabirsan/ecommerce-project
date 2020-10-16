@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\ProductProviderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/products', [ProductController::class, 'getAll']);
+Route::post('/products', [ProductController::class, 'store']);
+Route::delete('/products/{id}', [ProductController::class, 'destroy']);
+Route::get('/providers', [ProductProviderController::class, 'getAll']);
+Route::get('/categories', [ProductCategoryController::class, 'getAll']);
