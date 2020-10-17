@@ -30,6 +30,24 @@ class ProductController extends Controller
         return response()->json($product);
     }
     
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'product_category_id' => 'required',
+            'product_provider_id' => 'required',
+            'year' => 'required',
+            'capacity' => 'required',
+            'price' => 'required',
+            'currency' => 'required',
+            'type' => 'required',
+        ]);
+        
+        $product = Product::find($id);
+        $product->update($request->all());
+        return response()->json($product);
+    }
+    
     public function destroy(Request $request, $id)
     {
         Product::destroy($id);
