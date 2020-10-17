@@ -3,6 +3,7 @@
 ## Requirements
 * PHP
 * [Composer](https://getcomposer.org/)
+* [Node.js](https://nodejs.org/en/)
 * NPM
 
 ## How to run
@@ -13,8 +14,10 @@
 
 ``` cp .env.example .env ```
 
-#### Install dependencies
+#### Install Laravel framework widh dependencies
 ``` composer install ```
+
+#### Install Node dependencies
 ``` npm install ```
 
 #### Migrate DB
